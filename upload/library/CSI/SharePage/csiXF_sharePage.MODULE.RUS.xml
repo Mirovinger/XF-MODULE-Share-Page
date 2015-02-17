@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright © 2015 CYBERSPACE Industries. All rights reserved.
+  Contacts: http://cyberspace.industries/
+  License: LICENSE.RUS.txt
+-->
+<addon addon_id="csiXF_sharePage" title="(CSI/XF/MODULE) Поделиться страницей" version_string="1.0.0" version_id="1" url="http://cyberspace.industries/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners/>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups/>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="csiXF_sharePage_blockTitle" version_id="1" version_string="1.0.0"><![CDATA[Поделиться страницей]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties/>
+  <templates>
+    <template title="csiXF_sharePage" version_id="1" version_string="1.0.0"><![CDATA[<xen:require css="csiXF_sharePage.css" />
+<div class="section">
+  <div class="secondaryContent csiXF_sharePage csiXF_sharePage_sidebarBlock">
+    <h3>{xen:phrase csiXF_sharePage_blockTitle}</h3>
+    <div class="pairsJustified">
+      <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+      <div class="yashare-auto-init" data-yashareTheme="counter" data-yashareL10n="ru" data-yashareType="small" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"></div>
+    </div>
+  </div>
+</div>]]></template>
+    <template title="csiXF_sharePage.css" version_id="1" version_string="1.0.0"><![CDATA[.b-share_theme_counter .b-share_type_small span.b-share-btn__wrap {
+  margin-left: 1px;
+  margin-bottom: 1px;
+}]]></template>
+  </templates>
+  <public_template_modifications>
+    <modification template="PAGE_CONTAINER" modification_key="csiXF_sharePage_sidebarBlock" description="Добавление блока &quot;Поделиться страницей&quot;" execution_order="99999999" enabled="1" action="str_replace">
+      <find><![CDATA[<xen:include template="ad_sidebar_bottom" />]]></find>
+      <replace><![CDATA[<xen:include template="csiXF_sharePage" />
+$0]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites/>
+  <bb_codes/>
+</addon>
